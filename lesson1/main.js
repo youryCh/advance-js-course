@@ -30,31 +30,13 @@ const renderProducts = list => {
     });
 }
 
-const renderProduct = (title, price) => {
-        return `<div class="card">
-            <h3 class="card-title">${title}</h3>
-            <p class="card-price">${price}</p>
+const renderProduct = (title, price, img = 'https://placehold.it/150x100') => {
+    return `<div class="card">
+            <img src="${img}" class="card__img"></img>
+            <h3 class="card__title">${title}</h3>
+            <p class="card__price">${price}</p>
             <button class="btn">Добавить в корзину</button>
         </div>`;
-    }
+}
 
 renderProducts(products);
-
-// Вариант
-// const renderProducts = list => {
-//     const productsEl = document.querySelector('.products');
-//     const innerEl = createList(list).reduce((result, item) => `${result} ${item}`);
-//     productsEl.innerHTML = innerEl;
-// }
-
-// const createList = list => {
-//     return list.map(product => renderProduct(product.title, product.price));
-// }
-
-// const renderProduct = (title, price) => {
-//     return `<div class="product-item">
-//         <h3>${title}</h3>
-//         <p>${price}</p>
-//         <button class="by-btn">Добавить в корзину</button>
-//     </div>`;
-// }
