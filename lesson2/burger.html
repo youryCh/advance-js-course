@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger</title>    
+</head>
+<body>
+   <form>
+        <div>
+            <h2>Выберите размер гамбургера:</h2>
+            <label>
+                <input type="radio" name="size" id="small" data-price="50" data-energy="20">
+                Маленький
+            </label><br>
+            <label>                       
+                <input type="radio" name="size" id="big" data-price="100" data-energy="40">
+                Большой 
+            </label>        
+        </div>    
+        <div>
+            <h2>Выберите одну из начинок:</h2>
+            <label>            
+                <input type="radio" name="stuff" id="cheese" data-price="10" data-energy="20">
+                С сыром
+            </label><br>
+            <label>            
+                <input type="radio" name="stuff" id="salad" data-price="20" data-energy="5">
+                С салатом
+            </label><br>
+            <label>           
+                <input type="radio" name="stuff" id="potato" data-price="15" data-energy="10">
+                С картофелем
+            </label>
+        </div>    
+        <div>
+            <h3>Дополнительные ингредиенты:</h3>
+            <label>
+                <input type="checkbox" id="spice" data-price="15" data-energy="0">
+                Приправа
+            </label><br>
+            <label>
+                <input type="checkbox" id="sauce" data-price="20" data-energy="5">
+                Майонез
+            </label>
+        </div>
+        <button type="submit">Заказать</button>
+        <button type="reset">Очистить</button>
+   </form>
+
+    <script src="js/burger.js"></script>
+</body>
+</html>

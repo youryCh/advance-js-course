@@ -12,6 +12,7 @@ class ProductList {
     this.#render();
   }  
 
+  //Задание 2
   calcTotalPrice() {
     return this.#goods.reduce((sum, item) => sum + item.price, 0);
   }  
