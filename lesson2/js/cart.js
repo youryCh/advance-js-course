@@ -2,15 +2,15 @@
 //Задание 1
 
 class Cart {
-    constructor() {
-        productName //название товара
-        price //цена
-        quantity //количество
+    constructor(productName, price, quantity) {
+        this.productName = productName; //название товара
+        this.price = price; //цена
+        this.quantity = quantity; //количество
     }
     totalPrice() {} //возвращает общую стоимость покупки
     removeProduct() {} //удаляет товар
     makeDiscount() {} //возвращает цену с учётом скидки
-    static makePurchase() {} //делает последнее оформление с оплатой пр.  
+    makePurchase() {} //делает последнее оформление с оплатой пр.  
 }
 
 class CartElement extends Cart {
