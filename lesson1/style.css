@@ -4,33 +4,50 @@
 }
 
 body {
-    font-family: sans-serif;    
+    font-family: sans-serif;
+}
+
+header {
+    height: 80px;
+    background-color: #5b7691;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btn-cart{
+    margin-right: 20px;
+}
+
+.products {
+    display: flex;
+    justify-content: space-around;
 }
 
 .card {
-    width: 18rem;
+    width: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
     margin: 30px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 14px;
 }
 
-.btn {
-    align-self: center;
+.card__img {
+    border-radius: 5px;
 }
 
-.card-title {
+.card__title {
     color: grey;
 }
 
-.card-price {
+.card__price {
     color: rgba(248, 83, 33, 0.856);
 }
 
-.card-price:before {
+.card__price:before {
     content: "\20BD";
     font-size: 12px;
 }
@@ -38,11 +55,13 @@ body {
 .btn {
     width: 135px;
     height: 30px;
+    align-self: center;
     background-color: rgb(187, 187, 187);
     border: none;
     border-radius: 3px;
     color: white;
     transition: .2s;
+    outline: none;
 }
 
 .btn:hover {
