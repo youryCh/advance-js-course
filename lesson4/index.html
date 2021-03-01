@@ -55,8 +55,8 @@
         const regexpTel = /\+\d\(\d{3}\)\d{3}-\d{4}/g;
         const regexpEmail = /\w+.?_?\w?@\w+.\w+/gi;
 
-        function test(reg, value, input) {
-            if (!(reg.test(value))) {               
+        function submitTest(reg, input) {
+            if (!(reg.test(input.value))) {               
                 console.log('err');
                 input.style.borderBlockColor = 'red';
                 input.value = 'Error';
@@ -65,11 +65,11 @@
 
         formEl.addEventListener('submit', (event) => {
             event.preventDefault();
-            test(regexpText, inputText.value, inputText);
-            test(regexpTel, inputTel.value, inputTel);
-            test(regexpEmail, inputEmail.value, inputEmail);
-            
-        });       
+            submitTest(regexpText, inputText);
+            submitTest(regexpTel, inputTel);
+            submitTest(regexpEmail, inputEmail);            
+        });         
+        
     </script>
 </body>
 
