@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RegExp</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" class="text" placeholder="Name"><br>
+        <input type="tel" class="tel" placeholder="+7(000)000-0000"><br>
+        <input type="email" class="email" placeholder="mail@mail.ru"><br>
+        <input type="text" placeholder="Message"><br>
+        <button type="submit">Отправить </button>
+    </form>
+
+    <script>
+        'use strict';
+
+        const str = `
+            One: 'Hi Mary.' Two: 'Oh, hi.'
+            One: 'How are you doing?'
+            Two: 'I'm doing alright. How about you?'
+            One: 'Not too bad. The weather is great isn't it?'
+            Two: 'Yes. It's absolutely beautiful today.'
+            One: 'I wish it was like this more frequently.'
+            Two: 'Me too.'
+            One: 'So where are you going now?'
+            Two: 'I'm going to meet a friend of mine at the department store'
+            One: 'Going to do a little shopping?'
+            Two: 'Yeah, I have to buy some presents for my parents.'
+            One: 'What's the occasion?'
+            Two: 'It's their anniversary.'
+            One: 'That's great. Well, you better get going. You don't want to be late.'
+            Two: 'I'll see you next time.'
+            One: 'Sure.' Bye.'`;
+
+        // Задание 1
+        const str3 = str.replaceAll('\'', '"');
+        console.log(str3);
+
+        // Задание 2
+        const regExp = /\B'/g;
+        const str2 = str.replaceAll(regExp, '"');
+        console.log(str2);
+
+        // Задание 3
+        const formEl = document.querySelector('form');
+        const inputText = document.querySelector('.text');
+        const inputTel = document.querySelector('.tel');
+        const inputEmail = document.querySelector('.email');
+
+        const regexpText = /[a-z]/gi;
+        const regexpTel = /\+\d\(\d{3}\)\d{3}-\d{4}/g;
+        const regexpEmail = /\w+.?_?\w?@\w+.\w+/gi;
+
+        function test(reg, value, input) {
+            if (!(reg.test(value))) {               
+                console.log('err');
+                input.style.borderBlockColor = 'red';
+                input.value = 'Error';
+            }
+        }
+
+        formEl.addEventListener('submit', (event) => {
+            event.preventDefault();
+            test(regexpText, inputText.value, inputText);
+            test(regexpTel, inputTel.value, inputTel);
+            test(regexpEmail, inputEmail.value, inputEmail);
+            
+        });       
+    </script>
+</body>
+
+</html>
