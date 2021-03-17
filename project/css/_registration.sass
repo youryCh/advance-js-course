@@ -1,0 +1,102 @@
+.registration-container
+    display: flex
+    justify-content: space-between
+    margin: 64px 0 96px
+
+.registration-form
+    width: 360px
+
+    &__heading
+        +font(16px, 19px)
+        color: #222222
+        font-weight: 300
+
+    &__input
+        width: 100%
+        height: 45px
+        margin-top: 19px
+        padding: 0 17px
+        box-sizing: border-box        
+
+    &__radio
+        margin: 32px 10px 32px 0
+        filter: grayscale(100%)
+
+        &_mg
+            margin-left: 20px
+
+        &_font
+            +font(11px, 13px)
+            color: #000000
+            font-weight: 300
+
+    &__password-text
+        margin: 15px 0 39px
+        +font(13px, 16px)
+        font-weight: 300
+        color: #B1B1B1
+
+    &__button
+        width: 167px
+        height: 50px
+        background-color: $buttonColor
+        border: none
+        +font(14px, 17px)
+        font-weight: 400
+        color: #FFFFFF
+        padding-right: 20px
+        box-sizing: border-box
+        transition: .2s
+
+        &:hover
+            background-color: $buttonColor - #111
+
+.button__add-img
+    margin-left: -50px     
+        
+.registration-info
+    max-width: 652px
+    margin-left: 22px
+
+    &__header
+        +font(24px, 29px)
+        font-weight: 300
+        color: #000000
+
+    &__description
+        margin: 22px 0
+        +font(24px, 29px)
+        font-weight: 300
+        color: #000000
+        
+    &__perk
+        margin-bottom: 16px
+        +font(24px, 29px)
+        font-weight: 300
+        color: #000000
+
+        &::before
+            content: url("../img/check-img.svg")
+            margin-right: 23px
+
+@media (max-width: $screenTablet)
+    .registration-container
+        padding: 0 16px    
+
+    .registration-info__header
+        +font(16px, 19px)
+
+    .registration-info__description
+        +font(16px, 19px)
+
+    .registration-info__perk
+        +font(16px, 19px)
+
+@media (max-width: $screenMobile)
+    .registration-container
+        padding: 0 8px
+        flex-direction: column
+
+    .registration-info
+        margin-left: 0
+        margin-top: 40px

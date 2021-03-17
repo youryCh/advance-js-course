@@ -1,0 +1,226 @@
+.main-catalog__product
+    display: grid
+    grid-template: auto / repeat(3, 1fr)
+    grid-gap: 30px   
+
+details summary::-webkit-details-marker
+    display: none
+
+.filter-menu
+    position: relative
+
+    &_position
+        +centerPadding()
+        margin: 51px 0 64px
+        display: flex
+
+    &__text
+        +font(14px, 17px)
+        font-weight: 600
+        color: #000000
+        padding-left: 12px
+        position: absolute
+        z-index: 2
+        display: flex
+
+        &_red
+            +font(14px, 17px)
+            font-weight: 600
+            color: $buttonColor
+
+    &__navbar
+        position: absolute
+        left: -200vw
+        z-index: 1
+        background-color: white
+        padding: 17px
+        box-sizing: border-box
+        width: 360px
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+
+    &__details
+        +font(14px, 17px)
+        color: $buttonColor
+        margin-top: 18px
+
+        &:first-child
+            margin-top: 32px
+
+    &__details > summary
+        border-left: 5px solid $buttonColor
+        height: 37px
+        border-bottom: 1px solid #EBEBEB
+        display: flex
+        align-items: center
+        padding-left: 11px
+        outline: none
+
+    &__ref
+        +font(14px, 17px)
+        color: #6F6E6E
+        margin: 11px 12px
+        transition: .2s
+
+        &:hover
+            color: $buttonColor
+
+    &__input:checked ~ nav
+        left: -5px
+        top: -16px
+    
+    &__input:checked ~ .filter-menu__text
+        color: $buttonColor
+    
+    &__input:checked ~ .filter-menu__text > .filter-menu__img
+        display: none
+    
+    &__input:not(:checked) ~ .filter-menu__text > .filter-menu__img_red
+        display: none
+
+    &__category
+        display: flex
+        flex-direction: column
+        background-color: white
+        border-left: 5px solid white
+
+    &__img
+        margin-left: 11px
+        position: relative
+
+        &_red
+            position: absolute
+            left: 67px
+            top: 3px
+
+.chooser-checkbox
+    position: relative
+    +font(14px, 17px)
+    color: #6F6E6E
+    margin-left: 28px
+
+    &_position
+        margin: 0 auto
+        display: flex
+
+    &__navbar
+        position: absolute
+        left: -100vw
+        z-index: 1
+        background-color: white
+        width: 79px
+        height: 103px
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        +font(14px, 16px)
+        color: #6F6E6E
+        padding: 9px
+        box-sizing: border-box    
+
+    &__input:checked ~ nav
+        left: 0
+
+    &__checkbox_position
+        display: flex
+
+    &__checkbox_visible:checked
+        background-color: #ccc
+
+    &__checkbox_visible
+        display: inline-block !important
+        filter: grayscale(100%)
+        margin-right: 9px
+        appearance: none
+        width: 16px
+        height: 16px
+        border: 1px solid #EBEBEB
+
+    &__img
+        margin-left: 10px    
+
+.pagination
+    display: flex
+    justify-content: center
+    margin-top: 48px
+
+    &_position
+        width: 284px
+        height: 44px
+        +flexCenter()
+        border: 1px solid #EBEBEB
+        border-radius: 4px
+
+    &__item
+        +font(16px, 19px)
+        font-weight: 300
+        color: #C4C4C4
+        margin-left: 20px
+        transition: .2s
+
+        &_no-mg
+            margin-left: 0
+            margin-right: 20px
+
+        &:hover
+            color: $buttonColor
+
+@media (max-width: $screenTablet)
+    .main-catalog__product
+        grid-template: auto / repeat(2, 1fr)
+        grid-gap: 16px
+        padding: 0 16px
+        margin-bottom: 40px
+
+    .product-card:last-child
+        display: none
+
+    .main-catalog__header
+        padding: 0 16px
+
+    .filter-menu_position
+        padding: 0 16px
+        margin: 24px 0 40px
+        justify-content: space-between
+
+    .chooser-checkbox_position
+        margin: 0
+
+    .filter-menu__text
+        padding-left: 0    
+
+@media (max-width: $screenMobile)
+    .main-catalog__header
+        flex-direction: column
+        justify-content: center
+
+        &_mg
+            margin-bottom: 32px
+
+    .chooser-checkbox
+        +font(12px, 14px)
+        margin-left: 24px
+
+    .filter-menu__text
+        color: #ffffff
+        display: block
+        top: -20px
+
+    .filter-menu__img
+        transform: scale(2)
+
+    .filter-menu__img_red
+        left: 11px
+        top: 21px
+        transform: scale(2)
+
+    .filter-menu__input:checked ~ .filter-menu__text
+        color: #fff
+        display: block
+        top: -20px
+
+    .main-catalog__product
+        grid-template: auto / 1fr
+
+    .footer-top
+        margin-top: 64px
