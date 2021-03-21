@@ -5,9 +5,6 @@ Vue.component('cart-el', {
             showCart: false
         }
     },
-    methods: {
-
-    },
     template: `
         <div>
             <a href="#" class="main-menu__img_hide" @click="showCart = !showCart">
