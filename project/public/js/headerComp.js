@@ -9,7 +9,7 @@ Vue.component('header-component', {
                 <menu-component></menu-component>
                 <div class="top-header__box">
                     <a href="registration.html" class="main-menu__img_hide"><img src="img/account.svg" class="top-header__account" alt="account"></a>
-                    <cart-el ref="cart"></cart-el>                    
+                    <cart ref="cart"></cart>                    
                 </div>
             </div>
         </header>

@@ -130,6 +130,7 @@ input[type=checkbox] {
   padding: 20px;
   color: black;
   width: 300px;
+  z-index: 4;
 }
 
 .cart-block__text {
@@ -769,6 +770,10 @@ input[type=checkbox] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.main-catalog__product {
+  margin-top: 20px;
 }
 
 .breadcrumbs__item {
