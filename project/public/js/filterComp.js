@@ -5,7 +5,7 @@ Vue.component('search-el', {
         }
     },
     template: `
-        <form @submit.prevent="$parent.products.filter(userSearch)">
+        <form @submit.prevent="$root.$refs.products.filter(userSearch)">
             <button type="submit" class="btn-search">
                 <img src="img/search.svg" class="top-header__search" alt="search">
             </button>

@@ -24,21 +24,21 @@ Vue.component('products', {
     },
     template: `
         <div class="main-catalog__product center">
-            <product v-for="item of filtered" :img="item.img" :key="item.id_product" :product="item"></product>
+            <product ref="product" v-for="item of filtered" :key="item.id_product" :product="item"></product>
         </div>
     `
 });
 
 Vue.component('product', {
-    props: ['product', 'img'],
+    props: ['product'],
     data() {
         return {
-            cartAPI: this.$root.$refs.cart,
+            cartAPI: this.$root.$refs.headerEl.$refs.cart
         };
-    },
+    },    
     template: `
         <div class="product-card">            
-            <img :src="img" class="product-card__img" alt="product">
+            <img :src="product.img" class="product-card__img" alt="product">
             <h4 class="product-card__header">{{ product.product_name }}</h4>            
             <a href="#" @click="cartAPI.addProduct(product)" class="product-card__button-hover">
                 <img src="img/trolley-hover.svg" alt="cart">

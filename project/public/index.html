@@ -9,9 +9,10 @@
 </head>
 <body>
     <div id="app">
-        <header-component></header-component>
+        <header-el ref="headerEl"></header-el>
         <main>
-            <products></products>
+            <products ref="products"></products>
+            <error ref="error"></error>
         </main>
         <footer></footer>
     </div>

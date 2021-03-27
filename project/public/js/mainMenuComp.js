@@ -1,4 +1,4 @@
-Vue.component('menu-component', {
+Vue.component('menu-el', {
     data() {
         return {
             show: false,
