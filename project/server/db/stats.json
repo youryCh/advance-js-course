@@ -73,5 +73,25 @@
         "time": "27 Mar 2021, 8:43:47 pm",
         "prod_name": "ELLERY X M'O CAPSULE",
         "action": "remove"
+    },
+    {
+        "time": "28 Mar 2021, 9:55:02 pm",
+        "prod_name": "ELLERY X M'O CAPSULE",
+        "action": "add"
+    },
+    {
+        "time": "28 Mar 2021, 9:55:04 pm",
+        "prod_name": "ELLERY X M'O CAPSULE",
+        "action": "change"
+    },
+    {
+        "time": "28 Mar 2021, 9:55:06 pm",
+        "prod_name": "ELLERY X M'O CAPSULE",
+        "action": "remove"
+    },
+    {
+        "time": "28 Mar 2021, 10:07:01 pm",
+        "prod_name": "ELLERY X M'O CAPSULE",
+        "action": "add"
     }
 ]

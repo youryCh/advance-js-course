@@ -45,7 +45,7 @@ Vue.component('product', {
                 Add to Cart
             </a>
             <p class="product-card__text">{{ product.description }}</p>
-            <p class="product-card__price">{{ product.price }}</p>
+            <p class="product-card__price">{{ product.price }} $</p>
         </div>
     `
 });
