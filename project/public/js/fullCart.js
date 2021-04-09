@@ -1,8 +1,7 @@
-Vue.component('cart', {
+Vue.component('full-cart', {
     data() {
         return {
-            cartItems: [],
-            showCart: false
+            cartItems: [],         
         }
     },
     methods: {        
@@ -37,7 +36,13 @@ Vue.component('cart', {
                         }
                     });
             }
-        }
+        },    
+        filter(userSearch) {
+            let regExp = new RegExp(userSearch, 'i');
+            this.filtered = this.products.filter((el) => {
+                regExp.test(el.product_name);
+            });
+        },
     },
     mounted() {
         this.$root.getJson('/api/cart')
@@ -48,13 +53,10 @@ Vue.component('cart', {
             })
     },
     template: `
-        <div>
-            <a href="#" class="main-menu__img_hide" @click="showCart = !showCart">
-                <img src="img/trolley.svg" class="top-header__cart" alt="trolley">
-            </a>            
-            <div class="cart-block" v-show="showCart">
-                <p class="cart-block__text" v-if="!cartItems.length">Корзина пуста</p>
-                <cart-item class="cart-item" 
+        <div>                      
+            <div class="full-cart">
+                <p class="cart-block__text" v-if="!cartItems.length">Корзина пуста</p>                
+                <cart-item class="full-cart-item" 
                 v-for="item of cartItems" 
                 :key="item.id_product"
                 :cart-item="item"                
@@ -63,25 +65,5 @@ Vue.component('cart', {
                 </cart-item>
             </div>
         </div>    
-    `
-});
-
-Vue.component('cart-item', {
-    props: ['cartItem'],
-    template: `
-        <div class="cart-item">
-            <div class="product-bio">
-                <img :src="cartItem.img" class="cart-item__img" alt="image">
-                <div class="product-desc">  
-                    <p class="product-title">{{ cartItem.product_name }}</p>
-                    <p class="product-quantity">Количество: {{ cartItem.quantity }}</p>
-                    <p class="product-single-price">{{ cartItem.price }}$ за единицу</p>
-                </div>
-            </div>
-        <div class="right-block">
-            <p class="product-price">{{ cartItem.quantity * cartItem.price }}$</p>
-            <button class="del-btn" @click="$emit('remove', cartItem)">&times;</button>
-        </div>
-    </div>  
-    `
+    `    
 });

@@ -1,5 +1,14 @@
 const app = new Vue({
-    el: '#app',   
+    el: '#app',
+    data: {
+        tabs: ['products', 'full-cart'],
+        currentTab: 'products',
+    },
+    computed: {
+        currentComponent() {
+            return `${this.currentTab}`;
+        }
+    },
     methods: {
         getJson(url) {
             return fetch(url)

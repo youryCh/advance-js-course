@@ -10,14 +10,25 @@
 <body>
     <div id="app">
         <header-el ref="headerEl"></header-el>
-        <main>
-            <products ref="products"></products>
+        <main>            
+            <div class="tab-btn-container">
+                <button
+                    class="tab-btn"
+                    v-for="tab in tabs"
+                    :key="tab"
+                    @click="currentTab = tab"
+                >
+                    {{ tab }}
+                </button>
+            </div>
+            <component :is="currentComponent"></component>
             <error ref="error"></error>
         </main>
         <footer-el ref="footerEl"></footer-el>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/footerComp.js"></script>
+    <script src="js/fullCart.js"></script>
     <script src="js/errorComp.js"></script>
     <script src="js/productsComp.js"></script>
     <script src="js/cartComp.js"></script>
