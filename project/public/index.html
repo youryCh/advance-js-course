@@ -10,18 +10,8 @@
 <body>
     <div id="app">
         <header-el ref="headerEl"></header-el>
-        <main>            
-            <div class="tab-btn-container">
-                <button
-                    class="tab-btn"
-                    v-for="tab in tabs"
-                    :key="tab"
-                    @click="currentTab = tab"
-                >
-                    {{ tab }}
-                </button>
-            </div>
-            <component :is="currentComponent"></component>
+        <main>             
+            <component ref="products" :is="currentComponent"></component>
             <error ref="error"></error>
         </main>
         <footer-el ref="footerEl"></footer-el>

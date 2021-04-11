@@ -1,9 +1,9 @@
 Vue.component('search-el', {
     data() {
         return {
-            userSearch: ''
+            userSearch: '',                
         }
-    },
+    },     
     template: `
         <form @submit.prevent="$root.$refs.products.filter(userSearch)">
             <button type="submit" class="btn-search">

@@ -1,7 +1,7 @@
 const app = new Vue({
     el: '#app',
     data: {
-        tabs: ['products', 'full-cart'],
+        tabs: ['products', 'my-cart'],
         currentTab: 'products',
     },
     computed: {

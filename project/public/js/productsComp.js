@@ -2,16 +2,14 @@ Vue.component('products', {
     data() {
         return {
             products: [],
-            filtered: []            
+            filtered: [],
         }
     },
     methods: {
-        filter(userSearch) {
-            let regExp = new RegExp(userSearch, 'i');
-            this.filtered = this.products.filter((el) => {
-                regExp.test(el.product_name);
-            });
-        }
+        filter(value) {
+            let regexp = new RegExp(value, 'i');
+            this.filtered = this.products.filter((el) => regexp.test(el.product_name));
+        }        
     },
     mounted() {
         this.$parent.getJson('/api/products')

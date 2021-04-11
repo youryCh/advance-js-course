@@ -55,11 +55,11 @@ Vue.component('cart', {
             <div class="cart-block" v-show="showCart">
                 <p class="cart-block__text" v-if="!cartItems.length">Корзина пуста</p>
                 <cart-item class="cart-item" 
-                v-for="item of cartItems" 
-                :key="item.id_product"
-                :cart-item="item"                
-                @remove="remove"
-                ref="cartItem">
+                    v-for="item of cartItems" 
+                    :key="item.id_product"
+                    :cart-item="item"                
+                    @remove="remove"
+                    ref="cartItem">
                 </cart-item>
             </div>
         </div>    

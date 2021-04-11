@@ -723,20 +723,22 @@ input[type=checkbox]
     align-items: center
     margin-top: 20px
 
-.tab-btn-container
-    display: flex
-    justify-content: center
-    margin-top: 14px
-
 .tab-btn
-    margin-right: 20px
+    +font(14px, 22px)
+    text-transform: uppercase
+    margin-left: 14px
     width: 80px
     height: 30px
     background-color: transparent
-    border: 1px solid #ccc
-    border-radius: 5px
+    border: none
     transition: .2s
     outline: none
+    color: white
 
     &:hover
-        background-color: #f5f5f5
+       color: #ccc
+
+.full-cart-desc
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap

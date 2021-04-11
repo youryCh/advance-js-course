@@ -2182,29 +2182,29 @@ details summary::-webkit-details-marker {
   margin-top: 20px;
 }
 
-.tab-btn-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 14px;
-}
-
 .tab-btn {
-  margin-right: 20px;
+  font-family: Lato;
+  font-size: 14px;
+  line-height: 22px;
+  text-transform: uppercase;
+  margin-left: 14px;
   width: 80px;
   height: 30px;
   background-color: transparent;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: none;
   -webkit-transition: .2s;
   transition: .2s;
   outline: none;
+  color: white;
 }
 
 .tab-btn:hover {
-  background-color: #f5f5f5;
+  color: #ccc;
+}
+
+.full-cart-desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 /*# sourceMappingURL=style.css.map */
