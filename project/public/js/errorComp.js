@@ -10,7 +10,7 @@ Vue.component('error', {
         }
     },
     computed: {
-        isVisible() {
+        isVisible() {            
             return this.message !== '';
         }
     },

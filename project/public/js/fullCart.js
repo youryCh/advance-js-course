@@ -1,74 +1,34 @@
 Vue.component('my-cart', {
     data() {
         return {
-            cartItems: [],
             discount: 0,
         }
-    },
-    methods: {        
-        addProduct(product) {
-            let find = this.cartItems.find(el => el.id_product === product.id_product);
-            if (find) {
-                this.$root.putJson(`/api/cart/${find.id_product}`, {quantity: 1});
-                find.quantity++;
-            } else {
-                let prod = Object.assign({quantity: 1}, product);
-                this.$root.postJson('/api/cart', prod)
-                    .then(data => {
-                        if (data.result === 1) {
-                            this.cartItems.push(prod);
-                        }
-                    });
-            }
-        },
-        remove(item) {
-            if (item.quantity > 1) {
-                this.$root.putJson(`/api/cart/${item.id_product}`, {quantity: -1})
-                    .then(data => {
-                        if (data.result === 1) {
-                            item.quantity--;
-                        }
-                    });
-            } else {
-                this.$root.deleteJson(`/api/cart/${item.id_product}`)
-                    .then(data => {
-                        if (data.result === 1) {
-                            this.cartItems.splice(this.cartItems.indexOf(item), 1);
-                        }
-                    });
-            }
-        }              
-    },
+    },   
     computed: {
-        totalCost() {
+        getTotalCost() {
             let result = 0;
-            for (let item of this.cartItems) {
+            for (let item of this.$root.$refs.headerEl.$refs.cart.cartItems) {
                 result += (item.quantity * item.price);
             }
-            return result - (result / 100 * this.discount);
+            return result;
+        },
+        getDiscount() {
+            return this.getTotalCost - (this.getTotalCost / 100 * this.discount);
         }
-    },    
-    mounted() {
-        this.$root.getJson('/api/cart')
-            .then(data => {
-                for (let el of data.contents) {
-                    this.cartItems.push(el);
-                }
-            })
-    },    
+    },      
     template: `                             
         <div class="cart">
             <div>
-                <p class="cart-block__text" v-if="!cartItems.length">Корзина пуста</p>                
+                <p class="cart-block__text_lg" v-if="!$root.$refs.headerEl.$refs.cart.cartItems.length">no purchases yet</p>                
                 <my-cart-item  
-                    v-for="item of cartItems" 
+                    v-for="item of $root.$refs.headerEl.$refs.cart.cartItems" 
                     :key="item.id_product"
                     :my-cart-item="item"                
-                    @remove="remove"
+                    @remove="$root.$refs.headerEl.$refs.cart.remove"
                     ref="myCartItem">
                 </my-cart-item>
             </div>
-            <form class="address">
+            <form class="address" v-if="$root.$refs.headerEl.$refs.cart.cartItems.length">
                 <div class="address__form">
                     <h4 class="address__header">SHIPPING ADRESS</h4>
                     <input type="text" class="address__input" placeholder="Country">
@@ -79,11 +39,11 @@ Vue.component('my-cart', {
                 <div class="quote">
                     <h4 class="quote__sub-price">
                         DISCOUNT      
-                        <span class="quote__price_mg">{{ discount }}%</span>
+                        <span class="quote__price_mg">{{ discount }} %</span>
                     </h4> 
                     <h4 class="quote__price">
                         GRAND TOTAL      
-                        <span class="quote__price_mg quote__price_red">{{ totalCost }}$</span>
+                        <span class="quote__price_mg quote__price_red">{{ getDiscount }}$</span>
                     </h4>
                     <div class="quote__devider"></div>
                     <a href="#" class="quote__button">PROCEED TO CHECKOUT</a>

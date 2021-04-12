@@ -1,8 +1,8 @@
 const app = new Vue({
     el: '#app',
     data: {
-        tabs: ['products', 'my-cart'],
-        currentTab: 'products',
+        tabs: ['home', 'products', 'my-cart'],
+        currentTab: 'home',
     },
     computed: {
         currentComponent() {

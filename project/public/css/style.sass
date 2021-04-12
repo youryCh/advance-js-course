@@ -88,7 +88,11 @@ input[type=checkbox]
     z-index: 4
 
     &__text
-        +font(16px, 20px)
+        +font(18px, 20px)
+        text-align: center
+
+        &_lg
+            +font(24px, 30px)
 
     &::before
         content: ''
@@ -172,7 +176,7 @@ input[type=checkbox]
 
 .error-msg 
     padding: 30px 20px
-    background-color: yellow
+    background-color: red
     color: white
     position: relative
 
@@ -185,6 +189,7 @@ input[type=checkbox]
     width: 100%
     height: 100%
     align-items: center
+    z-index: 20
 
 .close-btn 
     font-size: 1.5em
@@ -195,6 +200,7 @@ input[type=checkbox]
     border: none
     color: white
     font-weight: bold
+    outline: none
 
 .main_menu
     position: absolute
@@ -742,3 +748,6 @@ input[type=checkbox]
     overflow: hidden
     text-overflow: ellipsis
     white-space: nowrap
+
+.search-form_mg
+    margin-right: 34px

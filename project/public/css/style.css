@@ -132,8 +132,15 @@ input[type=checkbox] {
 
 .cart-block__text {
   font-family: Lato;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 20px;
+  text-align: center;
+}
+
+.cart-block__text_lg {
+  font-family: Lato;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .cart-block::before {
@@ -247,7 +254,7 @@ input[type=checkbox] {
 
 .error-msg {
   padding: 30px 20px;
-  background-color: yellow;
+  background-color: red;
   color: white;
   position: relative;
 }
@@ -267,6 +274,7 @@ input[type=checkbox] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 20;
 }
 
 .close-btn {
@@ -278,6 +286,7 @@ input[type=checkbox] {
   border: none;
   color: white;
   font-weight: bold;
+  outline: none;
 }
 
 .main_menu {
@@ -2206,5 +2215,9 @@ details summary::-webkit-details-marker {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.search-form_mg {
+  margin-right: 34px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -53,7 +53,7 @@ Vue.component('cart', {
                 <img src="img/trolley.svg" class="top-header__cart" alt="trolley">
             </a>            
             <div class="cart-block" v-show="showCart">
-                <p class="cart-block__text" v-if="!cartItems.length">Корзина пуста</p>
+                <p class="cart-block__text" v-if="!cartItems.length">empty</p>
                 <cart-item class="cart-item" 
                     v-for="item of cartItems" 
                     :key="item.id_product"
@@ -78,10 +78,10 @@ Vue.component('cart-item', {
                     <p class="product-single-price">{{ cartItem.price }}$ за единицу</p>
                 </div>
             </div>
-        <div class="right-block">
-            <p class="product-price">{{ cartItem.quantity * cartItem.price }}$</p>
-            <button class="del-btn" @click="$emit('remove', cartItem)">&times;</button>
-        </div>
-    </div>  
+            <div class="right-block">
+                <p class="product-price">{{ cartItem.quantity * cartItem.price }}$</p>
+                <button class="del-btn" @click="$emit('remove', cartItem)">&times;</button>
+            </div>
+        </div>  
     `
 });
