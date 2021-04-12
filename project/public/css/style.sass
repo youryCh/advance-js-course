@@ -633,7 +633,26 @@ input[type=checkbox]
     .footer-bottom
         padding: 0 16px
 
+    .cart-block
+        right: 0
+
+        &::before
+            right: 5px
+
+    .main_menu
+        right: 0
+
 @media (max-width: $screenMobile)
+    .main_menu
+        left: 0
+        width: 100vw
+
+    .search-field
+        width: 150px
+
+    .top-header__search
+        transform: scale(.7)
+
     .main-menu__img_hide
         filter: brightness(.5)
 
@@ -733,7 +752,6 @@ input[type=checkbox]
     +font(14px, 22px)
     text-transform: uppercase
     margin-left: 14px
-    width: 80px
     height: 30px
     background-color: transparent
     border: none
@@ -751,3 +769,19 @@ input[type=checkbox]
 
 .search-form_mg
     margin-right: 34px
+
+@media (max-width: 376px)
+    .search-form_mg
+        display: none
+
+    .cart-card__header
+        +font(12px, 19px)
+
+    .full-cart-desc
+        display: none
+
+    .main-catalog__product
+        grid-template: auto / 1fr
+    
+    .cart
+        padding: 0 8px

@@ -33,12 +33,12 @@ Vue.component('menu-el', {
                     <img src="img/close_img.svg" @click="show = !show" alt="cross">
                 </label>
                 <h5 class="main_menu__header">MENU</h5>                
-                <a href="catalog.html" class="main_menu__section">MAN</a>
-                <a href="catalog.html" class="main_menu__item" v-for="item in man_items">{{item}}</a>
-                <a href="catalog.html" class="main_menu__section">WOMAN</a> 
-                <a href="catalog.html" class="main_menu__item" v-for="item in woman_items">{{item}}</a>                
-                <a href="catalog.html" class="main_menu__section">KIDS</a>
-                <a href="catalog.html" class="main_menu__item" v-for="item in kids_items">{{item}}</a>                
+                <a href="#" class="main_menu__section">MAN</a>
+                <a href="#" class="main_menu__item" v-for="item in man_items">{{item}}</a>
+                <a href="#" class="main_menu__section">WOMAN</a> 
+                <a href="#" class="main_menu__item" v-for="item in woman_items">{{item}}</a>                
+                <a href="#" class="main_menu__section">KIDS</a>
+                <a href="#" class="main_menu__item" v-for="item in kids_items">{{item}}</a>                
             </nav>
         </div>
     `
