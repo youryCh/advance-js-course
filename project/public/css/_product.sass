@@ -1,0 +1,168 @@
+.slider
+    height: 777px
+    background-color: #F7F7F7
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    &__img
+        margin-bottom: 42px
+
+    &__arrows
+        filter: brightness(0)
+        transition: .2s
+
+    &__arrow-box
+        width: 47px
+        height: 47px
+        background-color: #D8D8D8
+        +flexCenter()
+
+        &:hover .slider__arrows
+            filter: brightness(1)
+
+.product-description
+    +centerPadding()
+
+    &__container
+        height: 601px
+        margin-bottom: 60px
+        position: relative
+
+    &__position
+        width: 100%
+        height: 100%
+        position: absolute
+        top: -70px
+        border: 1px solid #EAEAEA
+        background-color: white
+        display: flex
+        flex-direction: column
+        align-items: center
+
+    &__top
+        text-align: center
+        margin-top: 65px
+        width: 641px
+        height: 292px
+        border-bottom: 1px solid #EAEAEA
+
+    &__header
+        +font(14px, 17px)
+        font-weight: 300
+        color: $buttonColor
+
+    &__devider
+        height: 3px
+        width: 63px
+        margin: 12px auto
+        background-color: $buttonColor
+
+    &__subheader
+        +font(18px, 22px)
+        font-weight: 300
+        color: #4D4D4D
+
+    &__text
+        width: 570px
+        margin: 48px auto 32px
+        +font(14px, 17px)
+        font-weight: 300
+        color: #5E5E5E
+
+    &__price
+        +font(24px, 29px)
+        font-weight: 300
+        color: $buttonColor
+
+.chooser
+    display: flex
+    justify-content: space-between
+    margin: 65px 0 48px
+    width: 373px
+
+    &__item
+        position: relative
+        +font(14px, 17px)
+        font-weight: 400
+        color: #6F6E6E
+
+        &:hover .chooser-checkbox__navbar
+            display: flex
+            left: 14px   
+
+.main-catalog__product_mg     
+    margin-bottom: 128px
+    
+.add-to-cart-btn
+    width: 211px
+    height: 47px
+    border: 1px solid  $buttonColor
+    +font(16px, 19px)
+    font-weight: 400
+    color: $buttonColor
+    +flexCenter()
+    transition: .2s
+
+    &__img
+        margin-right: 23px
+        transition: .2s
+
+    &:hover
+        background-color: $buttonColor
+        color: white
+
+    &:hover .add-to-cart-btn__img
+        filter: brightness(3)
+
+@media (max-width: $screenTablet)
+    .slider
+        height: 624px
+
+        &__img
+            height: 100%
+
+    .product-description__position
+        top: 0
+
+    .product-description__container
+        margin-bottom: 129px
+
+    .footer-subscribe
+        margin-top: 129px
+
+@media (max-width: $screenMobile)    
+    .slider
+        position: relative
+
+        &__arrow-box
+            position: absolute
+
+            &:last-child
+                right: 0
+
+        &__img
+            width: 100%
+            height: auto
+
+    .product-description__top
+        width: auto
+        padding: 0 25px
+
+    .product-description__text
+        width: auto
+
+    .chooser__item
+        +font(10px, 12px)
+
+    .chooser
+        justify-content: space-evenly
+
+        &__img
+            margin-left: 10px
+
+    .product-description__container
+        margin-bottom: 64px
+
+    .footer-subscribe
+        margin-top: 64px
