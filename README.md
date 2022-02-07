@@ -1,1 +1,1 @@
-# Advanced_JS
+## Тестовый проект для курса Advance JS
